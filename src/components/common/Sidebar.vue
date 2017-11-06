@@ -50,8 +50,8 @@
                                 title: '学员档案'
                             },
                             {
-                                index: 'basecharts',
-                                title: '学生信息2'
+                                index: 'attendancerecord',
+                                title: '学员考勤信息查询'
                             }, {
                                 index: 'upload',
                                 title: '学生信息3'
