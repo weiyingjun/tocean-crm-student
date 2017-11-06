@@ -52,6 +52,10 @@ export default new Router({
                 {
                     path: '/studentfiles',
                     component: resolve => require(['../components/page/StudentFiles.vue'], resolve)    // 拖拽列表组件
+                },
+                {
+                    path: '/studentmessage',
+                    component: resolve => require(['../components/page/StudentMessage.vue'], resolve)    // 拖拽列表组件
                 }
             ]
         },
