@@ -40,6 +40,21 @@
                         title: '自述'
                     },
                     {
+                        icon: 'el-icon-setting',
+                        index: 'sw',
+                        title: '提交作业'
+                    },
+                    {
+                        icon: 'el-icon-setting',
+                        index: 'si',
+                        title: '提交项目'
+                    },
+                    {
+                        icon: 'el-icon-setting',
+                        index: 'aj',
+                        title: '就业申请'
+                    },
+                    {
                         icon: 'el-icon-document',
                         index: '4',
                         title: '学生信息查询',
@@ -51,10 +66,14 @@
                             },
                             {
                                 index: 'attendancerecord',
-                                title: '学员考勤信息查询'
+                                title: '考勤记录'
                             }, {
-                                index: 'upload',
-                                title: '学生信息3'
+                                index: 'disciplinequery',
+                                title: '违纪记录'
+
+                            }, {
+                                index: 'praisequery',
+                                title: '表扬记录'
 
                             }]
 

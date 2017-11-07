@@ -50,6 +50,18 @@ export default new Router({
                     component: resolve => require(['../components/page/DragList.vue'], resolve)    // 拖拽列表组件
                 },
                 {
+                    path: '/sw',
+                    component: resolve => require(['../components/page/Submitworld.vue'], resolve)
+                },
+                {
+                    path: '/si',
+                    component: resolve => require(['../components/page/Submititem.vue'], resolve)
+                },
+                {
+                    path: '/aj',
+                    component: resolve => require(['../components/page/Askjob.vue'], resolve)
+                },
+                {
                     path: '/studentfiles',
                     component: resolve => require(['../components/page/StudentFiles.vue'], resolve)    // 拖拽列表组件
                 },
@@ -60,7 +72,14 @@ export default new Router({
                 {
                     path: '/attendancerecord',
                     component: resolve => require(['../components/page/AttendanceRecord.vue'], resolve)    // 拖拽列表组件
+                },{
+                    path: '/disciplinequery',
+                    component: resolve => require(['../components/page/DisciplineQuery.vue'], resolve)    // 拖拽列表组件
+                },{
+                    path: '/praisequery',
+                    component: resolve => require(['../components/page/PraiseQuery.vue'], resolve)    // 拖拽列表组件
                 }
+
             ]
         },
         {
