@@ -12,7 +12,7 @@ export default new Router({
         {
             path: '/readme',
             component: resolve => require(['../components/common/Home.vue'], resolve),
-            children:[
+            children: [
                 {
                     path: '/',
                     component: resolve => require(['../components/page/Readme.vue'], resolve)
@@ -63,21 +63,47 @@ export default new Router({
                 },
                 {
                     path: '/studentfiles',
-                    component: resolve => require(['../components/page/StudentFiles.vue'], resolve)    // 拖拽列表组件
+                    component: resolve => require(['../components/page/StudentFiles.vue'], resolve)    // 学员档案
                 },
                 {
                     path: '/studentmessage',
-                    component: resolve => require(['../components/page/StudentMessage.vue'], resolve)    // 拖拽列表组件
+                    component: resolve => require(['../components/page/StudentMessage.vue'], resolve)    // 基本资料
                 },
                 {
                     path: '/attendancerecord',
-                    component: resolve => require(['../components/page/AttendanceRecord.vue'], resolve)    // 拖拽列表组件
-                },{
+                    component: resolve => require(['../components/page/AttendanceRecord.vue'], resolve)    // 考勤记录
+                }, {
                     path: '/disciplinequery',
-                    component: resolve => require(['../components/page/DisciplineQuery.vue'], resolve)    // 拖拽列表组件
-                },{
+                    component: resolve => require(['../components/page/DisciplineQuery.vue'], resolve)    // 违纪记录
+                }, {
                     path: '/praisequery',
-                    component: resolve => require(['../components/page/PraiseQuery.vue'], resolve)    // 拖拽列表组件
+                    component: resolve => require(['../components/page/PraiseQuery.vue'], resolve)    // 表扬记录
+                }, {
+                    path: '/homeworkquery',
+                    component: resolve => require(['../components/page/HomeworkQuery.vue'], resolve)    // 作业完成情况
+                }, {
+                    path: '/assessment',
+                    component: resolve => require(['../components/page/Assessment.vue'], resolve)    // 项目考核情况
+                }, {
+                    path: '/positivity',
+                    component: resolve => require(['../components/page/Positivity.vue'], resolve)    // 班级管理积极性
+                }, {
+                    path: '/queryspeech',
+                    component: resolve => require(['../components/page/Queryspeech.vue'], resolve)    // 班级管理积极性
+                }, {
+                    path: '/queryspeechmsg',
+                    component: resolve => require(['../components/page/QueryspeechMsg.vue'], resolve)    // 班级管理积极性
+                }, {
+                    path: '/groupquery',
+                    component: resolve => require(['../components/page/GroupQuery.vue'], resolve)    // 班级管理积极性
+                },
+                {
+                    path: '/sumscore',
+                    component: resolve => require(['../components/page/SumScore.vue'], resolve)    // 班级管理积极性
+                },
+                {
+                    path: '/sumscoremsg',
+                    component: resolve => require(['../components/page/SumScoreMsg.vue'], resolve)    // 班级管理积极性
                 }
 
             ]

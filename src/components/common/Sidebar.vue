@@ -75,7 +75,33 @@
                                 index: 'praisequery',
                                 title: '表扬记录'
 
-                            }]
+                            }, {
+                                index: 'homeworkquery',
+                                title: '作业完成情况'
+
+                            },
+                            {
+                                index: 'assessment',
+                                title: '项目考核情况'
+
+                            }, {
+                                index: 'positivity',
+                                title: '班级管理积极性'
+
+                            }, {
+                                index: 'queryspeech',
+                                title: '演讲查询'
+
+                            }, {
+                                index: 'groupquery',
+                                title: '分组讨论查询'
+
+                            },{
+                                index: 'sumscore',
+                                title: '综合考评分'
+
+                            }
+                            ]
 
                     }
                 ]

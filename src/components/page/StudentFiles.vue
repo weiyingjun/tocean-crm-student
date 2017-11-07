@@ -57,12 +57,7 @@
             <div>
                 <el-collapse v-model="activeNames" style="margin-top: 20px">
                     <el-collapse-item title="学员信息列表" name="1">
-                        <el-table
-                            :data="table"
-                            height="500"
-                            border
-                            style="width: 100%;margin-top: 10px"
-                            @cell-click="stuMessage"
+                        <el-table :data="table" height="500" border style="width: 100%;margin-top: 10px" @cell-click="stuMessage"
                          >
                             <el-table-column
                                 prop="stuOrder"
