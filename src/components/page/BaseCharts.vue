@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <div class="plugins-tips" >
             <span class="Survey-list-management">当前功能：</span>
             调查列表管理
@@ -45,6 +46,7 @@
 </template>
 
 <script>
+
     export default {
         data() {
             return {
@@ -52,9 +54,11 @@
             };
         }
     }
+
 </script>
 
 <style scoped>
+
     .plugins-tips{
         height: 5px;
         color: #1A43A9;

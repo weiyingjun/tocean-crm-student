@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div>
         <div class="">
             <div class="plugins-tips" >
@@ -39,32 +40,39 @@
             <button class="btn"  @click="clean()">重新输入</button>
         </div>
     </div>
+
 </template>
 
 <script>
     export default {
         data() {
             return {
+
                 activeNames: ['1']
             };
         },
         methods: {
             open(){
-                    alert("系统异常，该功能不可用!");
+                alert("系统异常，该功能不可用!");
             },
             sub(){
                 alert("系统异常，该功能不可用!");
             },
             clean(){
 
-                document.getElementById('text').value="";
+                document.getElementById('text').value = "";
 
             }
         }
     }
+
+
+
+
 </script>
 
 <style scoped>
+
     .plugins-tips{
         color: #1A43A9;
         height: 5px;
@@ -113,3 +121,5 @@
         margin: 10px;
     }
 </style>
+
+

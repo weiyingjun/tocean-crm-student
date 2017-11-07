@@ -40,6 +40,7 @@
                         title: '自述'
                     },
                     {
+<<<<<<< HEAD
                         icon: 'el-icon-setting ',
                         index: '',
                         title: '提交作业'
@@ -106,6 +107,23 @@
                         index: 'drag',
                         title: '上传简历'
                     }, {
+=======
+                        icon: 'el-icon-setting',
+                        index: 'sw',
+                        title: '提交作业'
+                    },
+                    {
+                        icon: 'el-icon-setting',
+                        index: 'si',
+                        title: '提交项目'
+                    },
+                    {
+                        icon: 'el-icon-setting',
+                        index: 'aj',
+                        title: '就业申请'
+                    },
+                    {
+>>>>>>> 5ce0807ade6eb095ede14c4af5adf851f19ecc97
                         icon: 'el-icon-document',
                         index: '4',
                         title: '学生信息查询',
@@ -116,11 +134,23 @@
                                 title: '学员档案'
                             },
                             {
+<<<<<<< HEAD
                                 index: 'basecharts',
                                 title: '学生信息2'
                             }, {
                                 index: 'upload',
                                 title: '学生信息3'
+=======
+                                index: 'attendancerecord',
+                                title: '考勤记录'
+                            }, {
+                                index: 'disciplinequery',
+                                title: '违纪记录'
+
+                            }, {
+                                index: 'praisequery',
+                                title: '表扬记录'
+>>>>>>> 5ce0807ade6eb095ede14c4af5adf851f19ecc97
 
                             }]
 
