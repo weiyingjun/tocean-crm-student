@@ -52,6 +52,18 @@ export default new Router({
                 {
                     path: '/studentfiles',
                     component: resolve => require(['../components/page/StudentFiles.vue'], resolve)    // 拖拽列表组件
+                },
+                {
+                    path: '/sw',
+                    component: resolve => require(['../components/page/Submitworld.vue'], resolve)    // 拖拽列表组件
+                },
+                {
+                    path: '/sm',
+                    component: resolve => require(['../components/page/Submititem.vue'], resolve)    // 拖拽列表组件
+                },
+                {
+                    path: '/aj',
+                    component: resolve => require(['../components/page/Askjob.vue'], resolve)    // 拖拽列表组件
                 }
             ]
         },

@@ -34,17 +34,22 @@
                 ok: true,
 
                 items: [
-                    {
+           /*         {
                         icon: 'el-icon-setting',
                         index: 'readme',
                         title: '自述'
-                    },
+                    },*/
                     {
                         icon: 'el-icon-setting ',
-                        index: '',
+                        index: 'sw',
                         title: '提交作业'
                     },
                     {
+                        icon: 'el-icon-setting ',
+                        index: 'sm',
+                        title: '提交项目'
+                    },
+                   /* {
                         icon: 'el-icon-menu',
                         index: '2',
                         title: '表格',
@@ -112,9 +117,29 @@
                                 index: 'upload',
                                 title: '学生信息3'
 
-                            }]
+                            }],
 
-                    }
+                    },*/
+                    {
+                        icon: 'el-icon-setting',
+                        index: '1',
+                        title: '提交报告'
+                    },
+                    {
+                        icon: 'el-icon-setting',
+                        index: '2',
+                        title: '问卷调查'
+                    },
+                    {
+                        icon: 'el-icon-setting',
+                        index: '3',
+                        title: '上传简历'
+                    },
+                    {
+                        icon: 'el-icon-setting',
+                        index: 'aj',
+                        title: '就业申请'
+                    },
                 ]
             }
         },
