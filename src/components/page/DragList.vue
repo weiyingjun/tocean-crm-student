@@ -17,7 +17,7 @@
                             <table align="center" cellpadding="100%" cellspacing="5" width="100%"
                                    class="info-item" border="0">
                                 <tr>
-                                    <td align="right">简历:</td>
+                                    <td align="right">简历：</td>
                                     <td class="" colspan="4">
                                         <div class="info-con">
                                             <form action="" method="get">
