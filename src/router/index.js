@@ -54,16 +54,12 @@ export default new Router({
                     component: resolve => require(['../components/page/StudentFiles.vue'], resolve)    // 拖拽列表组件
                 },
                 {
-                    path: '/sw',
-                    component: resolve => require(['../components/page/Submitworld.vue'], resolve)    // 拖拽列表组件
+                    path: '/studentmessage',
+                    component: resolve => require(['../components/page/StudentMessage.vue'], resolve)    // 拖拽列表组件
                 },
                 {
-                    path: '/sm',
-                    component: resolve => require(['../components/page/Submititem.vue'], resolve)    // 拖拽列表组件
-                },
-                {
-                    path: '/aj',
-                    component: resolve => require(['../components/page/Askjob.vue'], resolve)    // 拖拽列表组件
+                    path: '/attendancerecord',
+                    component: resolve => require(['../components/page/AttendanceRecord.vue'], resolve)    // 拖拽列表组件
                 }
             ]
         },
