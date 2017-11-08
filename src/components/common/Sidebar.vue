@@ -52,7 +52,7 @@
 
                     {
                         icon: 'el-icon-setting',
-                        index: 'basecharts',
+                        index: '1',
                         title: '提交报告',
                         subs: [
                             {
@@ -75,7 +75,7 @@
                     },
                     {
                         icon: 'el-icon-setting',
-                        index: 'basecharts',
+                        index: '2',
                         title: '问卷调查',
                         subs: [
                             {
@@ -101,7 +101,7 @@
 
                     {
                         icon: 'el-icon-document',
-                        index: '4',
+                        index: '3',
                         title: '学生信息查询',
                         subs: [
 

@@ -40,7 +40,7 @@ module.exports = {
                 changeOrigin: true
             },
             '/student':{
-                target: 'http://192.168.4.90',
+                target: 'http://192.168.4.59',
                 changeOrigin: true
             }
         },

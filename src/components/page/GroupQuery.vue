@@ -43,7 +43,7 @@
             <div>
                 <el-collapse v-model="activeNames" style="margin-top: 70px;margin-left: 25px">
                     <el-collapse-item title="分组讨论信息列表" name="1">
-                        <el-table :data="table" height="500" border style="width: 100%;margin-top: 10px" @cell-click="stuMessage">
+                        <el-table :data="table" height="500" border style="width: 100%;margin-top: 10px" >
                             <el-table-column type="selection" width="55"></el-table-column>
                             <el-table-column
                                 prop="stuOrder"
@@ -192,10 +192,7 @@
             handleCurrentChange(val) {
                 console.log(`当前页: ${val}`);
             },
-            stuMessage: function (val) {
-                console.log(`当前页`);
-                this.$router.push('/queryspeechmsg');
-            }
+
 
         }
 
