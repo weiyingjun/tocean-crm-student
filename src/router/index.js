@@ -47,19 +47,47 @@ export default new Router({
                 },
                 {
                     path: '/drag',
-                    component: resolve => require(['../components/page/DragList.vue'], resolve)    // 拖拽列表组件
+                    component: resolve => require(['../components/page/DragList.vue'], resolve)    // 上传简历
                 },
                 {
                     path: '/sw',
-                    component: resolve => require(['../components/page/Submitworld.vue'], resolve)
+                    component: resolve => require(['../components/page/Submitworld.vue'], resolve) //提交作业
                 },
                 {
                     path: '/si',
-                    component: resolve => require(['../components/page/Submititem.vue'], resolve)
+                    component: resolve => require(['../components/page/Submititem.vue'], resolve) //提交项目
                 },
                 {
                     path: '/aj',
-                    component: resolve => require(['../components/page/Askjob.vue'], resolve)
+                    component: resolve => require(['../components/page/Askjob.vue'], resolve) //就业申请
+                },
+                {
+                    path: '/submitdaily',
+                    component: resolve => require(['../components/page/SubmitDaily.vue'], resolve)  //提交日报
+                },
+                {
+                    path: '/submitweekly',
+                    component: resolve => require(['../components/page/SubmitWeekly.vue'], resolve)  //提交周报
+                },
+                {
+                    path: '/historydaily',
+                    component: resolve => require(['../components/page/HistoryDaily.vue'], resolve)  //历史日报
+                },
+                {
+                    path: '/historyweekly',
+                    component: resolve => require(['../components/page/HistoryWeekly.vue'], resolve)  //历史周报
+                },
+                {
+                    path: '/writepaper',
+                    component: resolve => require(['../components/page/WritePaper.vue'], resolve)  //填写问卷
+                },
+                {
+                    path: '/historypaper',
+                    component: resolve => require(['../components/page/HistoryPaper.vue'], resolve)  //历史问卷
+                },
+                {
+                    path: '/historypaper',
+                    component: resolve => require(['../components/page/HistoryPaper.vue'], resolve)  //历史问卷
                 },
                 {
                     path: '/studentfiles',
@@ -89,21 +117,21 @@ export default new Router({
                     component: resolve => require(['../components/page/Positivity.vue'], resolve)    // 班级管理积极性
                 }, {
                     path: '/queryspeech',
-                    component: resolve => require(['../components/page/Queryspeech.vue'], resolve)    // 班级管理积极性
+                    component: resolve => require(['../components/page/Queryspeech.vue'], resolve)    // 演讲查询
                 }, {
                     path: '/queryspeechmsg',
-                    component: resolve => require(['../components/page/QueryspeechMsg.vue'], resolve)    // 班级管理积极性
+                    component: resolve => require(['../components/page/QueryspeechMsg.vue'], resolve)    //演讲查询列表
                 }, {
                     path: '/groupquery',
-                    component: resolve => require(['../components/page/GroupQuery.vue'], resolve)    // 班级管理积极性
+                    component: resolve => require(['../components/page/GroupQuery.vue'], resolve)    // 分组讨论查询
                 },
                 {
                     path: '/sumscore',
-                    component: resolve => require(['../components/page/SumScore.vue'], resolve)    // 班级管理积极性
+                    component: resolve => require(['../components/page/SumScore.vue'], resolve)    // 综合考评分
                 },
                 {
                     path: '/sumscoremsg',
-                    component: resolve => require(['../components/page/SumScoreMsg.vue'], resolve)    // 班级管理积极性
+                    component: resolve => require(['../components/page/SumScoreMsg.vue'], resolve)    // 综合考评分信息
                 }
 
             ]

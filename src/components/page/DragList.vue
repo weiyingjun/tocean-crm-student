@@ -1,105 +1,121 @@
 <template>
-    <section class="main">
-        <div class="crumbs">
-            <el-breadcrumb separator="/">
-                <el-breadcrumb-item><i class="el-icon-upload2"></i> 拖拽排序</el-breadcrumb-item>
-            </el-breadcrumb>
+    <div>
+        <div class="">
+            <div class="plugins-tips" >
+                <span class="Survey-list-management">当前功能：</span>
+                上传简历信息
+            </div>
+            <div class="Menu">
+                <button class="Menu-btn"  style="width:50px;height: 30px" @click="open()">提交</button>
+            </div>
         </div>
-        <div class="drag-box-left">
-            <div class="drag-title">拖动排序</div>
-            <div class="drag-list" draggable="true" 
-                v-for="list in data1" 
-                :data-id="list.id" 
-                @dragstart="dragstartEvent"
-                @dragend="dragendEvent"
-                @dragenter="dragenterEvent"
-                @dragleave="dragleaveEvent"
-                @dragover="dragoverEvent"
-            >{{list.title}}</div>
+        <div class="list"  >
+            <div class="list-table">
+                <el-collapse v-model="activeNames">
+                    <el-collapse-item title="基本资料( + 单击标题栏展开)" name="1" >
+                        <div class="list-info">
+                            <table align="center" cellpadding="100%" cellspacing="5" width="100%"
+                                   class="info-item" border="0">
+                                <tr>
+                                    <td align="right">简历:</td>
+                                    <td class="" colspan="4">
+                                        <div class="info-con">
+                                            <form action="" method="get">
+                                                <input id="text" type="file" name="img" multiple="multiple"/>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </el-collapse-item>
+                </el-collapse>
+            </div>
+
         </div>
-    </section>
+        <div class="btn-table" >
+            <button class="btn" @click="sub()">确认提交</button>
+            <button class="btn"  @click="clean()">重新输入</button>
+        </div>
+    </div>
+
 </template>
 
 <script>
     export default {
         data() {
             return {
-                dragElement: null,
-                lock: true,
-                data1: [
-                    {id: 1, title: '这里是列表1的标题'},
-                    {id: 2, title: '这里是列表2的标题'},
-                    {id: 3, title: '这里是列表3的标题'},
-                    {id: 4, title: '这里是列表4的标题'},
-                    {id: 5, title: '这里是列表5的标题'},
-                    {id: 6, title: '这里是列表6的标题'},
-                    {id: 7, title: '这里是列表7的标题'}
-                ],
-                data2: [
-                    {id: 1, title: '这里是列表11的标题'},
-                    {id: 2, title: '这里是列表12的标题'},
-                    {id: 3, title: '这里是列表13的标题'},
-                    {id: 4, title: '这里是列表14的标题'}
-                ]
-            }
+
+                activeNames: ['1']
+            };
         },
         methods: {
-            dragstartEvent(ev) {
-                const self = this;
-                self.dragElement = ev.target;
-                ev.target.style.backgroundColor = '#f8f8f8';
+            open(){
+                alert("系统异常，该功能不可用!");
             },
-            dragendEvent(ev) {
-                ev.target.style.backgroundColor = '#fff';
-                ev.preventDefault();
+            sub(){
+                alert("系统异常，该功能不可用!");
             },
-            dragenterEvent(ev) {
-                const self = this;
-                if(self.dragElement != ev.target){
-                    ev.target.parentNode.insertBefore(self.dragElement, ev.target);
-                }
-            },
-            dragleaveEvent(ev) {
-                const self = this;
-                if(self.dragElement != ev.target){
-                    if(self.lock && (ev.target == ev.target.parentNode.lastElementChild || ev.target == ev.target.parentNode.lastChild)){
-                        ev.target.parentNode.appendChild(self.dragElement);
-                        self.lock = false;
-                    }else{
-                        self.lock = true;
-                    }
-                }
-            },
-            dragoverEvent(ev) {
-                ev.preventDefault();
+            clean(){
+
+                document.getElementById('text').value = "";
+
             }
         }
     }
+
 </script>
 
 <style scoped>
-    .drag-box-left{
-        float: left;
-        width: 45%;
+
+    .plugins-tips{
+        color: #1A43A9;
+        height: 5px;
     }
-    .drag-box-right{
-        float: right;
-        width: 45%;
+    .Survey-list-management{
+        font-size: small;
+        color: #5e7382;
+
     }
-    .drag-list{
-        border: 1px solid #ddd;
-        padding:10px;
-        margin-bottom: 20px;
-        transition: border .3s;
+    .Menu{
+        background-color: #EEF1F6;
+        height: 50px;
+        width: 100%;
+        text-align: right;
+        margin-bottom: 15px;
     }
-    .drag-list:hover{
-        border: 1px solid #20a0ff;
+    .Menu-btn{
+        background-color: #E3E3E3;
+        color:#000000;
+        margin: 8px;
     }
-    .drag-title{
-        font-weight: 400;
-        line-height: 25px;
-        margin: 10px 0;
-        font-size: 22px;
-        color: #1f2f3d;
+
+    .list-info{
+        height: 50px;
+        background-color: #ffffff;
+    }
+    .info-item{
+        background-color: #EEF7FD;
+        color: #5e7382;
+    }
+    .info-con{
+        background-color: #ffffff;
+        border:1px solid #89B2DA;
+        border-bottom: 1px;
+        padding: 3px;
+    }
+    .btn-table{
+        height: 40px;
+        width: 100%;
+        background-color:#EEF7FD;
+        text-align: center;
+
+    }
+    .btn{
+        border-bottom: 5px ;
+        margin: 10px;
     }
 </style>
+
+

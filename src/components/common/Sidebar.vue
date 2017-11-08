@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar">
         <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router>
-            <template >
+            <template>
                 <el-menu-item :index="items[0].index">
                     <i :class="items[0].icon"></i>{{ items[0].title }}
                 </el-menu-item>
@@ -49,11 +49,56 @@
                         index: 'si',
                         title: '提交项目'
                     },
+
+                    {
+                        icon: 'el-icon-setting',
+                        index: 'basecharts',
+                        title: '提交报告',
+                        subs: [
+                            {
+                                index: 'submitdaily',
+                                title: '提交日报'
+                            },
+                            {
+                                index: 'submitweekly',
+                                title: '提交周报'
+                            },
+                            {
+                                index: 'historydaily',
+                                title: '历史日报'
+                            },
+                            {
+                                index: 'historyweekly',
+                                title: '历史周报'
+                            }
+                        ]
+                    },
+                    {
+                        icon: 'el-icon-setting',
+                        index: 'basecharts',
+                        title: '问卷调查',
+                        subs: [
+                            {
+                                index: 'writepaper',
+                                title: '填写问卷'
+                            },
+                            {
+                                index: 'historypaper',
+                                title: '历史问卷'
+                            }
+                        ]
+                    },
+                    {
+                        icon: 'el-icon-setting',
+                        index: 'drag',
+                        title: '上传简历'
+                    },
                     {
                         icon: 'el-icon-setting',
                         index: 'aj',
                         title: '就业申请'
                     },
+
                     {
                         icon: 'el-icon-document',
                         index: '4',
@@ -96,12 +141,12 @@
                                 index: 'groupquery',
                                 title: '分组讨论查询'
 
-                            },{
+                            }, {
                                 index: 'sumscore',
                                 title: '综合考评分'
 
                             }
-                            ]
+                        ]
 
                     }
                 ]
@@ -123,17 +168,21 @@
 </script>
 
 <style scoped>
+
     .sidebar {
         display: block;
         position: absolute;
         width: 250px;
+
         left: 0;
         top: 70px;
         bottom: 0;
         background: #2E363F;
+
     }
 
     .sidebar > ul {
         height: 100%;
     }
+
 </style>

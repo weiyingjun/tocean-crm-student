@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <div class="plugins-tips" >
             <span class="Survey-list-management">当前功能：</span>
             调查列表管理
@@ -44,26 +43,10 @@
         </div>
     </div>
 </template>
-
-<script>
-
-    export default {
-        data() {
-            return {
-                activeNames: ['1']
-            };
-        }
-    }
-
-</script>
-
-<style scoped>
-
+<style>
     .plugins-tips{
-        height: 5px;
         color: #1A43A9;
     }
-
     .Survey-list-management{
         font-size: small;
         color: #5e7382;
@@ -72,5 +55,14 @@
         background-color: #EEF7FD;
         color: #5e7382;
     }
-
 </style>
+<script>
+    export default{
+        data(){
+            return {
+                activeNames: ['1']
+            }
+        },
+        methods: {}
+    }
+</script>
