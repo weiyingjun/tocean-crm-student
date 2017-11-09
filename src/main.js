@@ -8,7 +8,6 @@ import 'element-ui/lib/theme-default/index.css';    // 默认主题
 import "babel-polyfill";
 
 Vue.use(ElementUI);
-/*
 // http request 拦截器
 axios.interceptors.request.use(
     config => {
@@ -20,9 +19,9 @@ axios.interceptors.request.use(
     err => {
         return Promise.reject(err);
     });
-*/
+
 // http response 拦截器
-/*
+
 axios.interceptors.response.use(
     response => {
         return response;
@@ -44,11 +43,11 @@ axios.interceptors.response.use(
         }
         return Promise.reject(error.response.data);   // 返回接口返回的错误信息
     });
-*/
+
 
 
 Vue.prototype.$axios = axios;
-/*
+
 // JWT 用户权限校验，判断 TOKEN 是否在 localStorage 当中
 router.beforeEach(({path}, from, next) => {
     //用户在登录或未登录情况下都可以转到这两个页面
@@ -68,7 +67,7 @@ router.beforeEach(({path}, from, next) => {
         next({path: '/readme'});
     }
 });
-*/
+
 new Vue({
     router,
     render: h => h(App)

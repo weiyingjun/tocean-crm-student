@@ -39,7 +39,7 @@
             }
         },
         methods: {
-            submitForm(formName) {
+            /*submitForm(formName) {
                 const self = this;
                 self.$refs[formName].validate((valid) => {
                     if (valid) {
@@ -50,33 +50,32 @@
                         return false;
                     }
                 });
-            }
-           /* submitForm(formName) {
+            }*/
+            submitForm(formName) {
                 const self = this;
                 self.$refs[formName].validate((valid) => {
                     if (valid) {
                         var param = {
-                            username: self.ruleForm.username,
-                            password: self.ruleForm.password
+                            username:self.ruleForm.username,
+                            password:self.ruleForm.password
                         };
                         self.$axios.post(self.url, param).then((res) => {
                             console.log(res.data.success);
-                            if (res.data.success) {
-                                localStorage.setItem('USERNAME', self.ruleForm.username);
-                                localStorage.setItem('JWT_TOKEN', res.data.success);
+                            if(res.data.success){//登录成功
+                                localStorage.setItem('USERNAME',self.ruleForm.username);
+                                localStorage.setItem('JWT_TOKEN',res.data.success);
                                 self.$router.push('/readme');
-
-                            } else {
+                            }else{
                                 self.errorMsg = res.data.error;
                             }
                         })
-                    }
-                    else {
+
+                    } else {
                         console.log('error submit!!');
                         return false;
                     }
                 });
-            }*/
+            }
         }
     }
 </script>
