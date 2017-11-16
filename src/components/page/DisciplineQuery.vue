@@ -8,157 +8,99 @@
                 </el-breadcrumb>
             </div>
         </template>
-        <template>
 
-            <div>
-                <span class="el_span">班级</span>
-                <select v-model="class_selected" class="select_class">
-                    <option v-for="option in class_options" v-bind:value="option.class">
-                        {{ option.text }}
-                    </option>
-                </select>
-                <span class="el_span">学员</span>
-                <el-input class="el_input" v-model="name" type="text"
-                          style="width: 200px"></el-input>
-                <span class="el_span">时间</span>
-                <el-input class="el_input" v-model="mTime" type="text"
-                          style="width: 220px"></el-input>
-                <span class="el_span">至</span>
-                <el-input class="el_input" v-model="bTime" type="text"
-                          style="width: 220px"></el-input>
-
-                <el-button
-                    @click="disciplineMsg"  style="margin-left: 20px">查询</el-button>
-            </div>
-        </template>
         <el-collapse v-model="activeNames" style="margin-top: 20px">
             <el-collapse-item title="学员违纪信息查询 " name="1">
-                <el-table
-                    :data="table"
-                    height="500"
-                    border
-                    style="width: 100%;margin-top: 10px">
-                    <el-table-column
-                        prop="stuOrder"
-                        label="序号"
-                        width="120">
-                    </el-table-column>
-                    <el-table-column
-                        prop="stuName"
-                        label="学员"
-                        width="120"
-                    >
-                    </el-table-column>
-
-                    <el-table-column
-                        prop="class"
-                        label="班级">
-                    </el-table-column>
-                    <el-table-column
-                        prop="disciplineTime"
-                        label="违纪时间"
-                    >
-                    </el-table-column>
-                    <el-table-column
-                        prop="disciplineSituation"
-                        label="违纪情况"
-                    >
-                    </el-table-column>
-                    <el-table-column
-                        prop="attitude"
-                        label="学员违纪态度">
-                    </el-table-column>
-
+                <el-table :data="table"border style="width: 100%;margin-top: 10px">
+                    <el-table-column prop="studentName" label="学员" width="120"></el-table-column>
+                    <el-table-column prop="classNum" label="班级"></el-table-column>
+                    <el-table-column prop="viloationDate" label="违纪时间"></el-table-column>
+                    <el-table-column prop="violationSituation" label="违纪情况"></el-table-column>
+                    <el-table-column prop="studentAttribute" label="学员违纪态度"></el-table-column>
                 </el-table>
             </el-collapse-item>
 
         </el-collapse>
-        <template>
-            <div>
-                <el-pagination
-                    @size-change="handleSizeChange"
-                    @current-change="handleCurrentChange"
-                    :current-page="currentPage1"
-                    :page-sizes="[10,20,50]"
-                    :page-size="10"
-                    layout=" ->,prev,pager,next, jumper,sizes,total,slot"
-                    :total="1000">
-                </el-pagination>
-            </div>
-        </template>
     </div>
 </template>
 <style>
 
 </style>
 <script>
+
+
     export default {
         data() {
             return {
                 currentPage1: 1,
-                name: '',
-                mTime:'',
-                bTime:'',
+
                 activeNames: ['1'],
-                class_options: [
-                    {text: '', class: ''},
-                    {text: 'ASD08061', class: '1'},
-                    {text: 'ASD08063', class: '2'},
-                    {text: 'ASD08062', class: '3'},
-                    {text: 'ASD0807', class: '4'},
-                ],
-                class_selected: '',
-                class_leave: '',
-                table: [{
-                    stuOrder: '1	',
-                    stuName: '郭子尧',
-                    class: 'SD0902',
-                    disciplineTime: '2009-07-22',
-                    disciplineSituation: '早上迟到',
-                    attitude: '态度良好'
-                }, {
-                    stuOrder: '2	',
-                    stuName: '	曾耀钧',
-                    class: 'SD0902',
-                    disciplineTime: '2009-07-21',
-                    disciplineSituation: '迟到',
-                    attitude: '态度恶劣'
-                }],
+                table: [],
+                tables: {},
+
 
 
             }
         },
+        created(){
+            this.getData();
+        },
+        computed: {
+            username(){
+                let name = localStorage.getItem('USERNAME');
+                return name;
+            }
+        },
         methods: {
-            disciplineMsg: function (val) {
+            getData(){
+                let self = this;
+                if (process.env.NODE_ENV === 'development') {
+                    self.url = 'student/api/violation/list';
+                }
+                self.$axios.get(self.url).then((res) => {
+                    self.table = res.data.result;
+                    Date.prototype.toLocaleString = function () {
+                        var Month = this.getMonth() + 1;
+                        var day = this.getDate()
+                        if (Month >= 10) {
+                            Month = Month;
+                        }
+                        else {
+                            Month = "0" + Month;
+                        }
+                        if (day >= 10) {
+                            day = day;
+                        }
+                        else {
+                            day = "0" + day;
+                        }
 
-                this.$router.push('/studentfiles');
+
+                        return this.getFullYear() + "-" + Month + "-" + day;
+                    };
+                    for (var i = 0; i < self.table.length; i++) {
+                        var unixTimestamp = new Date(self.table[i].viloationDate).toLocaleString();
+                        self.table[i].viloationDate = unixTimestamp;
+                    }
+                })
+            },
+
+            disciplineMsg() {
+
             },
             handleSizeChange(val) {
                 console.log(`每页 ${val} 条`);
             },
             handleCurrentChange(val) {
                 console.log(`当前页: ${val}`);
-            }
+            },
 
-        }
+
+        },
+
 
     }
 </script>
 <style>
-    .el_input {
-        width: 180px;
-        margin-left: 10px;
-        margin-top: 20px;
-    }
 
-    .el_span {
-        margin-left: 10px;
-    }
-
-    .select_class {
-        margin-left: 10px;
-        margin-top: 20px;
-        height: 35px;
-
-    }
 </style>

@@ -4,118 +4,95 @@
             <div>
                 <el-breadcrumb separator=":">
                     <el-breadcrumb-item><i class="el-icon-date"></i> 当前功能</el-breadcrumb-item>
-                    <el-breadcrumb-item>学员档案</el-breadcrumb-item>
+                    <el-breadcrumb-item>学员信息</el-breadcrumb-item>
                 </el-breadcrumb>
-            </div>
-        </template>
-        <template>
-
-            <div>
-                <span class="el_span">班级</span>
-                <select v-model="class_selected" class="select_class">
-                    <option v-for="option in class_options" v-bind:value="option.class">
-                        {{ option.text }}
-                    </option>
-                </select>
-
-
-                <span class="el_span">学员</span><el-input class="el_input" v-model="name" type="text"
-                                                         style="width: 200px"></el-input>
-                <span class="el_span">性别</span>
-                <select v-model="sex_selected" class="select_class">
-                <option v-for="option in sex_options" v-bind:value="option.sex">
-                    {{ option.text }}
-                </option>
-            </select>
-
-                <span class="el_span">毕业学校</span><el-input class="el_input" v-model="school" type="text"
-                                                           style="width: 420px"></el-input>
-                <span class="el_span">院系</span><el-input class="el_input" v-model="department"type="text"
-                                                         style="width: 210px"></el-input>
-                <span class="el_span">专业</span><el-input class="el_input" v-model="collegeMajor"type="text"
-                                                         style="width: 340px"></el-input>
-                <span class="el_span">学历</span>
-                <select v-model="educational_selected" class="select_class">
-                    <option v-for="option in educational_options" v-bind:value="option.educational">
-                        {{ option.text }}
-                    </option>
-                </select>
-                <span class="el_span">联系电话</span><el-input class="el_input" v-model="phone"type="text"></el-input>
-                <span class="el_span">就业薪资</span><el-input class="el_input" v-model="SSalary"type="text"
-                                                           style="width: 90px"></el-input>
-                <span class="el_span">到</span><el-input class="el_input" v-model="BSalary"type="text"
-                                                        style="width: 90px"></el-input>
-                <span class="el_span">就业公司</span><el-input class="el_input" v-model="company"type="text"
-                                                         style="width: 260px"></el-input>
-                <span class="el_span">就业职位</span><el-input class="el_input" v-model="headShip"type="text"
-                                                           style="width: 130px"></el-input>
-                <el-button type="primary" plain class="el_input" style="width: 80px">查询</el-button>
-                <el-button type="primary" plain class="el_input"style="width: 100px">导出EXCEL</el-button>
             </div>
         </template>
         <template>
             <div>
                 <el-collapse v-model="activeNames" style="margin-top: 20px">
-                    <el-collapse-item title="学员信息列表" name="1">
-                        <el-table :data="table" height="500" border style="width: 100%;margin-top: 10px" @cell-click="stuMessage"
-                         >
-                            <el-table-column
-                                prop="stuOrder"
-                                label="序号"
-                                width="100">
-                            </el-table-column>
-                            <el-table-column
-                                prop="stuName"
-                                label="学员名称"
-                                width="100"
-                                >
-                            </el-table-column>
-                            <el-table-column
-                                prop="stuNum"
-                                label="学号">
-                            </el-table-column>
-                            <el-table-column
-                                prop="class"
-                                label="班级">
-                            </el-table-column>
-                            <el-table-column
-                                prop="sex"
-                                label="性别"
-                                width="100">
-                            </el-table-column>
-                            <el-table-column
-                                prop="educational"
-                                label="学历"
-                                width="100">
-                            </el-table-column>
-                            <el-table-column
-                                prop="schoolPhone"
-                                label="入学时联系电话">
-                            </el-table-column>
-                            <el-table-column
-                                prop="graduatePhone"
-                                label="毕业时联系电话">
-                            </el-table-column>
-                        </el-table>
+                    <el-collapse-item title="基本资料" name="1">
+                        <table border="1">
+                            <tr>
+                                <th>姓名</th>
+                                <td>{{table.studentName}}</td>
+                                <th>学号</th>
+                                <td>{{table.id}}</td>
+                            </tr>
+                            <tr>
+                                <th>班级</th>
+                                <td>{{table.classNum}}</td>
+                                <th>性别</th>
+                                <td>{{table.sex}}</td>
+                            </tr>
+                            <tr>
+                                <th>学历</th>
+                                <td>{{table.schoolRecord}}</td>
+                                <th>专业</th>
+                                <td>{{table.collegeMajor}}</td>
+                            </tr>
+                            <tr>
+                                <th>出生日期</th>
+                                <td>{{table.birthDay}}</td>
+                                <th>籍贯</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>院系</th>
+                                <td>{{table.department}}</td>
+                                <th>学生类型</th>
+                                <td>{{table.studentType}}</td>
+                            </tr>
+                        </table>
                     </el-collapse-item>
-                    <div>
-                        <template>
-                            <div>
-                                <el-pagination
-                                    @size-change="handleSizeChange"
-                                    @current-change="handleCurrentChange"
-                                    :current-page="currentPage1"
-                                    :page-sizes="[10,20,50]"
-                                    :page-size="10"
-                                    layout=" ->,prev,pager,next, jumper,sizes,total,slot"
-                                    :total="1000">
-                                </el-pagination>
-                            </div>
-                        </template>
-                    </div>
+
                 </el-collapse>
+
+
             </div>
         </template>
+        <template>
+            <div>
+                <el-collapse v-model="activeNames" style="margin-top: 20px">
+                    <el-collapse-item title="联系方式" name="1">
+                        <table border="1">
+                            <tr>
+                                <th>联系电话</th>
+                                <td>{{table.telephone}}</td>
+                                <th>邮箱</th>
+                                <td>{{table.email}}</td>
+                            </tr>
+                            <tr>
+                                <th>家庭地址</th>
+                                <td>{{table.homeAddress}}</td>
+                                <th>QQ</th>
+                                <td>{{table.qq}}</td>
+                            </tr>
+                            <tr>
+                                <th>监护人</th>
+                                <td>{{table.guardian}}</td>
+                                <th>监护人电话</th>
+                                <td>{{table.guardianphone}}</td>
+                            </tr>
+                            <tr>
+                                <th>证件号码</th>
+                                <td>{{table.credentialNum}}</td>
+                                <th></th>
+                                <td></td>
+                            </tr>
+
+                        </table>
+
+
+                    </el-collapse-item>
+
+                </el-collapse>
+
+
+            </div>
+        </template>
+
+
     </div>
 </template>
 
@@ -123,72 +100,67 @@
     export default {
         data() {
             return {
+                table: {},
                 currentPage1: 1,
-                name:'',
-                school:'',
-                department:'',
-                collegeMajor:'',
-                phone:'',
-                SSalary:'',
-                BSalary:'',
-                company:'',
-                headShip:'',
                 activeNames: ['1'],
-                table: [{
-                    stuOrder: '1	',
-                    stuName: '张义增',
-                    stuNum: '0200806001',
-                    class: 'SD0806',
-                    sex: '男',
-                    educational: '本科',
-                    schoolPhone: '13242826559',
-                    graduatePhone: ''
-                }, {
-                    stuOrder: '2',
-                    stuName: '吴良飞',
-                    stuNum: '0200806002',
-                    class: 'SD0806',
-                    sex: '男',
-                    educational: '本科',
-                    schoolPhone: '13242828660',
-                    graduatePhone: ''
-                }],
-                class_selected: '',
-                sex_selected:'',
-                educational_selected:'',
-                class_options: [
-                    { text: '', class: '' },
-                    { text: 'ASD08061', class: '1' },
-                    { text: 'ASD08063', class: '2' },
-                    { text: 'ASD08062', class: '3' },
-                    { text: 'ASD0807', class: '4' },
-                ],
-                sex_options:[
-                    { text: '', sex: '' },
-                    { text: '男', sex: '1' },
-                    { text: '女', sex: '2' },
-                ],
-                educational_options:[
-                    { text: '', educational: '' },
-                    { text: '硕士', educational: '1' },
-                    { text: '本科', educational: '2' },
-                    { text: '大专', educational: '3' },
-                    { text: '高中', educational: '4' },
-                    { text: '其他', educational: '4' }
-                ]
-
 
 
             }
         },
+        created(){
+            this.getData();
+        },
         methods: {
+            getData(){
+                let self = this;
+                if (process.env.NODE_ENV === 'development') {
+                    self.url = 'student/api/info/list';
+                }
+
+                self.$axios.get(self.url).then((res) => {
+                    self.table = res.data.result;
+                    if (self.table.sex = 1) {
+                        self.table.sex = '男';
+                    } else {
+                        self.table.sex = '女';
+                    }
+                    if (self.table.schoolRecord = 1) {
+                        self.table.schoolRecord = '本科'
+                    }
+                    if (self.table.studentType = 1) {
+                        self.table.studentType = 'SD'
+                    }
+                    Date.prototype.toLocaleString = function () {
+                        var Month = this.getMonth() + 1;
+                        var day=this.getDate();
+                        if (Month >= 10 ) {
+                            Month = Month ;
+                        }
+                        else {
+                            Month = "0" + Month ;
+                        }
+                        if (day>= 10 ) {
+                            day = day ;
+                        }
+                        else {
+                            day = "0" + day ;
+                        }
+                        return this.getFullYear() + "-" + Month + "-" + day ;
+                    };
+
+                        var unixTimestamp = new Date(self.table.birthDay).toLocaleString();
+                        self.table.birthDay = unixTimestamp;
+
+                })
+
+            },
             handleSizeChange(val) {
                 console.log(`每页 ${val} 条`);
             },
             handleCurrentChange(val) {
                 console.log(`当前页: ${val}`);
             },
-            stuMessage:function(val){
+            stuMessage: function (val) {
                 console.log(`当前页`);
                 this.$router.push('/studentmessage');
             }
@@ -198,18 +170,36 @@
     }
 </script>
 <style>
-    .el_input{
-        width:180px;
+    .el_input {
+        width: 100px;
         margin-left: 10px;
         margin-top: 20px;
     }
-    .el_span{
+
+    .el_span {
         margin-left: 10px;
     }
-    .select_class{
+
+    .select_class {
         margin-left: 10px;
         margin-top: 20px;
         height: 35px;
-        width: 100px;
+        width: auto;
+    }
+
+    table {
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+    }
+
+    th {
+        width: 25%;
+        height: 50px;
+    }
+
+    td {
+        width: 25%;
+        height: 50px;
     }
 </style>

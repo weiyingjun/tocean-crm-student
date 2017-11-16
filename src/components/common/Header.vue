@@ -29,7 +29,7 @@
         computed:{
             username(){
                 let username = localStorage.getItem('USERNAME');
-                return username ;
+                return username;
             }
         },
         methods:{

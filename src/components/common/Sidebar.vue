@@ -157,7 +157,7 @@
                 return this.$route.path.replace('/', '');
             },
             username(){
-                let username = localStorage.getItem('ms_username');
+                let username = localStorage.getItem('USERNAME');
                 return username;
             },
             items2(){
@@ -178,7 +178,7 @@
         bottom: 0;
         background: #2E363F;
         overflow-x: scroll;
-        -webkit-scrollbar:none ;
+        -webkit-scroll:none ;
 
     }
 
